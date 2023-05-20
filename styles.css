@@ -1,0 +1,24 @@
+textarea {
+    display: block;
+    height: 80px;
+    width: 275px;
+    size-adjust: none;
+}
+
+legend {
+    text-align: center;
+}
+
+textarea {
+    margin-top: 1em;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+#weights-ex {
+    width: 50px
+}
+
