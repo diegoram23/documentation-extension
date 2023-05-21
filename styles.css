@@ -9,8 +9,12 @@ legend {
     text-align: center;
 }
 
-textarea {
+.ther-ex-box {
+    border: 1px solid #2d2d2d;
+    height: 200px;
+    width: 350px;
     margin-top: 1em;
+    padding: 0.3em;
 }
 
 fieldset {

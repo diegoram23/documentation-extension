@@ -11,37 +11,38 @@
 
 <body>
     <form>
-        <fieldset>
+        <fieldset id="ther-ex-fieldset">
             <legend>Ther Ex</legend>
 
             <label for="supine-ex">
                 <span>Supine Exercises</span>
-                <input type="radio" id="supine-ex" name="supine-ex" />
+                <input type="checkbox" id="supine-ex" name="ther-ex" />
             </label>
 
             <label for="seated-ex">
                 <span>Seated Exercises</span>
-                <input type="radio" id="seated-ex" name="seated-ex" />
+                <input type="checkbox" id="seated-ex" name="ther-ex" />
             </label>
 
             <label for="standing-ex">
                 <span>Standing Exercises</span>
-                <input type="radio" id="standing-ex" name="standing-ex" />
+                <input type="checkbox" id="standing-ex" name="ther-ex" />
             </label>
 
             <label for="weights-ex">
                 <span>Weights</span>
-                <input type="number" id="weights-ex" name="weights-ex" />
+                <input type="number" id="weights-ex" name="weights-ex"/>
             </label>
 
-            <textarea></textarea>
-            
+            <div class="ther-ex-box" id="ther-ex-box">
+            </div>
+
         </fieldset>
     </form>
     <button id="create-btn">Create</button>
 
 
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
 </body>
 
 </html>
