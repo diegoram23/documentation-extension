@@ -1,46 +1,73 @@
-import { supineExText, seatedExText, standingExText, reps, weightsText } from "/data.js"
+import { supineExText, seatedExText, standingExText, retText } from "/data.js"
 
-const createBtn = document.getElementById('create-btn')
+const therExBtn = document.getElementById('create-btn')
 const supineEx = document.getElementById('supine-ex')
 const seatedEx = document.getElementById('seated-ex')
 const standingEx = document.getElementById('standing-ex')
-const isWeights = document.getElementById('weights-ex')
+const weights = document.getElementById('weights-ex')
 const therExText = document.getElementById('ther-ex-box')
 
-let dualText = ''
+//Used if user selects more than one choice
+let combinedStr = ''
 
-createBtn.addEventListener('click', () => {
+
+therExBtn.addEventListener('click', () => {
 
     if (seatedEx.checked && supineEx.checked) {
-        dualText = supineExText + ' ' + seatedExText
-        removeDuplicate(dualText)
+        combinedStr = supineExText + ' ' + seatedExText
+        multiChoiceText(combinedStr)
+    }
+
+    else if (seatedEx.checked && standingEx.checked) {
+        combinedStr = standingExText + ' ' + seatedExText
+        multiChoiceText(combinedStr)
+    }
+
+    else if (supineEx.checked && standingEx.checked) {
+        combinedStr = supineExText + ' ' + standingExText
+        multiChoiceText(combinedStr)
     }
 
     else if (supineEx.checked) {
-        therExText.textContent = supineExText
+        singleChoiceText(supineExText)
     }
 
     else if (seatedEx.checked) {
-        therExText.textContent = seatedExText
+        singleChoiceText(seatedExText)
     }
 
     else if (standingEx.checked) {
-        therExText.textContent = standingExText
+        singleChoiceText(standingExText)
     }
 
 
 })
 
-function removeDuplicate(str) {
+function singleChoiceText(str) {
+    let weightsText = retText.replace('#', weights.value + '#')
+    weights ? therExText.textContent = str + weightsText : therExText.textContent = str
+}
+
+function multiChoiceText(str) {
 
     let combinedStr = str.split(' ')
 
     //Splits entire string into two and removes repeated words
     const firstHalfStr = combinedStr.splice(0, 16).join(' ')
-    const secondHalfStr = combinedStr.splice(16, 33).join(' ')
-    //Both strings are rejoined to make an eligible phrase
-    const finalStr = firstHalfStr + " and " + secondHalfStr
+    const secondHalfStr = combinedStr.splice(17, 33).join(' ')
 
-    //Text to appear in box is then set as finalStr
-    therExText.textContent = finalStr
+    //Both strings are rejoined to make an eligible phrase
+    const finishedStr = firstHalfStr + " and " + secondHalfStr
+
+    //Text to appear in box is then set as finishedStr
+
+    if (weights) {
+        let weightsText = retText.replace('#', weights.value + '#')
+        therExText.textContent = finishedStr + weightsText
+
+    } else {
+        therExText.textContent = finishedStr
+
+    }
+
 }
