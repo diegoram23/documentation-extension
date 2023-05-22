@@ -14,7 +14,12 @@ let combinedStr = ''
 
 therExBtn.addEventListener('click', () => {
 
-    if (seatedEx.checked && supineEx.checked) {
+    if (supineEx.checked && seatedEx.checked && standingEx.checked) {
+        combinedStr = supineExText + ' ' + seatedExText + ' ' + standingExText
+        multiChoice(combinedStr)
+    }
+
+    else if (seatedEx.checked && supineEx.checked) {
         combinedStr = supineExText + ' ' + seatedExText
         dualChoice(combinedStr)
     }
@@ -45,12 +50,21 @@ therExBtn.addEventListener('click', () => {
 })
 
 function singleChoiceText(str) {
+    //Edits number of reps text if user chooses to
     let weightsText = retText.replace('#', weights.value + '#')
     let repsText = str.replace('x10', 'x' + reps.value)
-    weights ? therExText.textContent = repsText + weightsText : therExText.textContent = repsText
+
+    //Text to appear in box if weights are added
+    if (weights.value >= 1) {
+        therExText.textContent = repsText + weightsText
+    } else {
+        //Text to appear in box if there are no weigts
+        therExText.textContent = repsText
+    }
 }
 
 function dualChoice(str) {
+    //Edits number of reps text if user chooses to
     let repsText = str.replace('x10', '')
     repsText = repsText.replace('x10', 'x' + reps.value)
 
@@ -63,15 +77,25 @@ function dualChoice(str) {
     //Both strings are rejoined to make an eligible phrase
     const finishedStr = firstHalfStr + " and " + secondHalfStr
 
-    //Text to appear in box is then set as finishedStr
-
-    if (weights) {
+    //Text to appear in box if weights are added
+    if (weights.value >= 1) {
         let weightsText = retText.replace('#', weights.value + '#')
         therExText.textContent = finishedStr + weightsText
 
     } else {
+        //Text to appear in box if there are no weights
         therExText.textContent = finishedStr
 
     }
 
+}
+
+function multiChoice(str) {
+    let combinedStr = str.split(' ')
+    const firstThirdStr = combinedStr.splice(0, 14).join(' ')
+    const secondThirdStr = combinedStr.splice(19, 12).join(' ')
+    const finalThirdStr = combinedStr.splice(38, 31).join(' ')
+    const finishedStr = firstThirdStr + ' and ' + secondThirdStr + ' and ' + finalThirdStr
+    therExText.textContent = finishedStr
+  
 }
