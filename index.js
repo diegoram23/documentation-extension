@@ -6,6 +6,7 @@ const seatedEx = document.getElementById('seated-ex')
 const standingEx = document.getElementById('standing-ex')
 const weights = document.getElementById('weights-ex')
 const therExText = document.getElementById('ther-ex-box')
+const reps = document.getElementById('reps-ex')
 
 //Used if user selects more than one choice
 let combinedStr = ''
@@ -15,17 +16,17 @@ therExBtn.addEventListener('click', () => {
 
     if (seatedEx.checked && supineEx.checked) {
         combinedStr = supineExText + ' ' + seatedExText
-        multiChoiceText(combinedStr)
+        dualChoice(combinedStr)
     }
 
     else if (seatedEx.checked && standingEx.checked) {
         combinedStr = standingExText + ' ' + seatedExText
-        multiChoiceText(combinedStr)
+        dualChoice(combinedStr)
     }
 
     else if (supineEx.checked && standingEx.checked) {
         combinedStr = supineExText + ' ' + standingExText
-        multiChoiceText(combinedStr)
+        dualChoice(combinedStr)
     }
 
     else if (supineEx.checked) {
@@ -45,12 +46,15 @@ therExBtn.addEventListener('click', () => {
 
 function singleChoiceText(str) {
     let weightsText = retText.replace('#', weights.value + '#')
-    weights ? therExText.textContent = str + weightsText : therExText.textContent = str
+    let repsText = str.replace('x10', 'x' + reps.value)
+    weights ? therExText.textContent = repsText + weightsText : therExText.textContent = repsText
 }
 
-function multiChoiceText(str) {
+function dualChoice(str) {
+    let repsText = str.replace('x10', '')
+    repsText = repsText.replace('x10', 'x' + reps.value)
 
-    let combinedStr = str.split(' ')
+    let combinedStr = repsText.split(' ')
 
     //Splits entire string into two and removes repeated words
     const firstHalfStr = combinedStr.splice(0, 16).join(' ')

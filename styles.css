@@ -20,7 +20,14 @@ input {
     margin: 0.5em 0;
 }
 
+input[type=checkbox]:hover, label:hover{
+    cursor: pointer;
+}
+
  input[type=number] {
     width: 40px
 }
 
+button:hover {
+    cursor: pointer;
+}
