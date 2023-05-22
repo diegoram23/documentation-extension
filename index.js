@@ -1,38 +1,46 @@
-import { therExData } from "/data.js"
+import { supineExText, seatedExText, standingExText, reps, weightsText } from "/data.js"
 
 const createBtn = document.getElementById('create-btn')
 const supineEx = document.getElementById('supine-ex')
 const seatedEx = document.getElementById('seated-ex')
 const standingEx = document.getElementById('standing-ex')
+const isWeights = document.getElementById('weights-ex')
 const therExText = document.getElementById('ther-ex-box')
 
-let therExArray = []
+let dualText = ''
 
 createBtn.addEventListener('click', () => {
 
-    if (supineEx.checked) {
-        therExArray.push(Object.values(therExData[0]))
-        therExText.textContent = therExArray
+    if (seatedEx.checked && supineEx.checked) {
+        dualText = supineExText + ' ' + seatedExText
+        removeDuplicate(dualText)
     }
 
-    if (seatedEx.checked) {
-        therExArray.push(Object.values(therExData[1]))
-        therExText.textContent = therExArray
+    else if (supineEx.checked) {
+        therExText.textContent = supineExText
     }
 
-    if (standingEx.checked) {
-        therExArray.push(Object.values(therExData[2]))
-        therExText.textContent = therExArray
+    else if (seatedEx.checked) {
+        therExText.textContent = seatedExText
     }
 
-    // if (seatedEx.checked && supineEx.checked) {
-    //     therExArray.push((Object.values(therExData[2]) + Object.values(therExData[1])))
-    //     removeDuplicate(therExArray)
-    // }
+    else if (standingEx.checked) {
+        therExText.textContent = standingExText
+    }
+
 
 })
 
 function removeDuplicate(str) {
-    let isDuplString = JSON.stringify(str)
-    // console.log(isDuplString.split(''))
+
+    let combinedStr = str.split(' ')
+
+    //Splits entire string into two and removes repeated words
+    const firstHalfStr = combinedStr.splice(0, 16).join(' ')
+    const secondHalfStr = combinedStr.splice(16, 33).join(' ')
+    //Both strings are rejoined to make an eligible phrase
+    const finalStr = firstHalfStr + " and " + secondHalfStr
+
+    //Text to appear in box is then set as finalStr
+    therExText.textContent = finalStr
 }
