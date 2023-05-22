@@ -54,36 +54,33 @@ function singleChoiceText(str) {
     let weightsText = retText.replace('#', weights.value + '#')
     let repsText = str.replace('x10', 'x' + reps.value)
 
-    //Text to appear in box if weights are added
+    //Weights text to appear with exercise text if weights are added
     if (weights.value >= 1) {
         therExText.textContent = repsText + weightsText
     } else {
-        //Text to appear in box if there are no weigts
+        //Only exercise text appears
         therExText.textContent = repsText
     }
 }
 
 function dualChoice(str) {
-    //Edits number of reps text if user chooses to
-    let repsText = str.replace('x10', '')
-    repsText = repsText.replace('x10', 'x' + reps.value)
 
-    let combinedStr = repsText.split(' ')
+    let combinedStr = str.split(' ')
 
     //Splits entire string into two and removes repeated words
-    const firstHalfStr = combinedStr.splice(0, 16).join(' ')
-    const secondHalfStr = combinedStr.splice(17, 33).join(' ')
+    const firstHalfStr = combinedStr.splice(0, 14).join(' ')
+    const secondHalfStr = combinedStr.splice(19, 33).join(' ')
 
-    //Both strings are rejoined to make an eligible phrase
-    const finishedStr = firstHalfStr + " and " + secondHalfStr
+    //Both strings are rejoined and reps value is edited if neeeded
+    const finishedStr = firstHalfStr + " and " + secondHalfStr.replace('x10', 'x' + reps.value)
 
-    //Text to appear in box if weights are added
+    //Weights text to appear with exercise text if weights are added
     if (weights.value >= 1) {
         let weightsText = retText.replace('#', weights.value + '#')
         therExText.textContent = finishedStr + weightsText
 
     } else {
-        //Text to appear in box if there are no weights
+        //Only exercise text appears
         therExText.textContent = finishedStr
 
     }
