@@ -3,7 +3,7 @@ legend {
     text-align: center;
 }
 
-.ther-ex-box {
+.text-box {
     border: 1px solid #2d2d2d;
     height: 200px;
     width: 330px;
@@ -27,6 +27,12 @@ input[type=checkbox]:hover, label:hover{
  input[type=number] {
     width: 40px
 }
+
+select {
+    width: 80px;
+    margin: 0.5em;
+}
+
 
 button:hover {
     cursor: pointer;

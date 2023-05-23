@@ -10,9 +10,9 @@
 </head>
 
 <body>
-
+    <!------------------------------------------ Ther Ex Fieldset -------------------------------------->
     <fieldset id="ther-ex-fieldset">
-        <legend>Ther Ex</legend>
+        <legend>Therapeutic Exercises</legend>
 
         <label for="supine-ex">
             <span>Supine Exercises</span>
@@ -39,13 +39,45 @@
             <input type="number" id="weights-ex" name="weights-ex" />
         </label>
 
-        <div class="ther-ex-box" id="ther-ex-box">
+        <div class="text-box" id="ther-ex-box">
         </div>
+
+        <button id="ther-ex-create-btn">Create</button>
+        <button id="ther-ex-copy-btn">Copy</button>
     </fieldset>
 
-    <button id="create-btn">Create</button>
-    <button id="copy-btn">Copy</button>
+    <!------------------------------------------ Ther Act Fieldset -------------------------------------->
+    <form>
+    <fieldset id="ther-act-fieldset">
+        <legend>Therapeutic Activities</legend>
 
+        <label for="transfers">
+            <span>Transfers</span>
+            <input type="checkbox" id="transfers" name="transfers" />
+        </label>
+
+        <label for="ad">
+            <span>AD</span>
+            <select name="ad" id="ad">
+                <option value="">-- Select --</option>  
+                <option value="FWW">FWW</option>
+                <option value="4WW">4WW</option>
+                <option value="SPC">SPC</option>
+                <option value="Quad Cane">Quad Cane</option>  
+                <option value="Hemi Walker">Hemi Walker</option>
+                <option value="Slide Board">Slide Board</option>
+                <option value="Hoyer Lift">Hoyer Lift</option>
+                <option value="No AD">no AD</option>
+            </select>
+        </label>
+
+        <div class="text-box" id="ther-act-box">
+        </div>
+
+        <button id="ther-act-create-btn">Create</button>
+        <button id="ther-act-copy-btn">Copy</button>
+    </fieldset>
+    </form>
 
     <script src="index.js" type="module"></script>
 </body>
