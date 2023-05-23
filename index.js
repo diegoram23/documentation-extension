@@ -1,4 +1,4 @@
-import { supineExText, seatedExText, standingExText, retText, transfersText } from "/data.js"
+import { supineExText, seatedExText, standingExText, retText, transfersText, gaitText } from "/data.js"
 
 /*----------------------------- Ther Ex variables ---------------------------------- */
 const therExCreatBtn = document.getElementById('ther-ex-create-btn')
@@ -13,7 +13,14 @@ const reps = document.getElementById('reps-ex')
 const therActCreateBtn = document.getElementById('ther-act-create-btn')
 const transfers = document.getElementById('transfers')
 const therActText = document.getElementById('ther-act-box')
-const ad = document.getElementById('ad')
+const adTransfers = document.getElementById('ad-transfers')
+
+/*----------------------------- Gait Training variables ---------------------------------- */
+const gaitCreateBtn = document.getElementById('gait-create-btn')
+const gaitTextBox = document.getElementById('gait-text-box')
+const gait = document.getElementById('gait-training')
+const stairs = document.getElementById('stair-training')
+
 
 //Depending what exercise options user chooses, a specific function will be called
 therExCreatBtn.addEventListener('click', () => {
@@ -120,7 +127,7 @@ function multiChoice(str) {
 
 therActCreateBtn.addEventListener('click', () => {
     //User must select an AD option as well to generate transfers text
-    if (transfers.checked && ad.value) {
+    if (transfers.checked && adTransfers.value) {
         createTransfersText(transfersText)
         document.getElementById('ad-choice').style.display = 'none'
         //Otherwise an error message appears
@@ -134,6 +141,6 @@ const createTransfersText = (str) => {
     //String is split and then rejoined with AD selection
     const firstHalfStr = str.split(' ').splice(0, 5).join(' ')
     const secondHalfStr = str.split(' ').splice(5, 23).join(' ')
-    const combinedStr = firstHalfStr + ' ' + ad.value + ' ' + secondHalfStr
+    const combinedStr = firstHalfStr + ' ' + adTransfers.value + ' ' + secondHalfStr
     therActText.textContent = combinedStr
 }

@@ -50,14 +50,19 @@
     <fieldset id="ther-act-fieldset">
         <legend>Therapeutic Activities</legend>
 
+        <label for="bed mobility">
+            <span>Bed Mobility</span>
+            <input type="checkbox" id="bed-mobility" name="bed-mobility" />
+        </label>
+
         <label for="transfers">
             <span>Transfers</span>
             <input type="checkbox" id="transfers" name="transfers" />
         </label>
 
-        <label for="ad">
+        <label for="ad-transfers">
             <span>AD</span>
-            <select name="ad" id="ad">
+            <select name="ad-transfers" id="ad-transfers">
                 <option value="">-- Select --</option>
                 <option value="FWW">FWW</option>
                 <option value="4WW">4WW</option>
@@ -88,9 +93,9 @@
             <input type="checkbox" id="gait-training" name="gait-training" />
         </label>
 
-        <label for="ad">
+        <label for="ad-gait">
             <span>AD</span>
-            <select name="ad" id="ad">
+            <select name="ad-gait" id="ad-gait">
                 <option value="">-- Select --</option>
                 <option value="FWW">FWW</option>
                 <option value="4WW">4WW</option>
@@ -102,6 +107,23 @@
         </label>
         <p id="ad-choice">Select an AD choice</p>
 
+
+        <label for="stair-training">
+            <span>Stair Training</span>
+            <input type="checkbox" id="stair-training" name="stair-training" />
+        </label>
+
+
+        <label for="ad">
+            <span>Railings</span>
+            <select name="railings" id="railings">
+                <option value="">-- Select --</option>
+                <option value="no railings">None</option>
+                <option value="one railing">One</option>
+                <option value="two railings">Two</option>
+                <option value="single railing and cane">Railing/Cane</option>
+            </select>
+        </label>
         <div class="text-box" id="gait-box">
         </div>
 
