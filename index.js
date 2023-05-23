@@ -1,4 +1,4 @@
-import { supineExText, seatedExText, standingExText, retText, transfersText, gaitText } from "/data.js"
+import { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText } from "/data.js"
 
 /*----------------------------- Ther Ex variables ---------------------------------- */
 const therExCreatBtn = document.getElementById('ther-ex-create-btn')
@@ -11,6 +11,7 @@ const reps = document.getElementById('reps-ex')
 
 /*----------------------------- Ther Act variables ---------------------------------- */
 const therActCreateBtn = document.getElementById('ther-act-create-btn')
+const bedMobility = document.getElementById('bed-mobility')
 const transfers = document.getElementById('transfers')
 const therActText = document.getElementById('ther-act-box')
 const adTransfers = document.getElementById('ad-transfers')
@@ -126,14 +127,29 @@ function multiChoice(str) {
 }
 
 therActCreateBtn.addEventListener('click', () => {
+
+    if (bedMobility.checked && transfers.checked && adTransfers.value !== '') {
+        therActText.textContent = bedMobilityText + createTransfersText(transfersText)
+    }
+
     //User must select an AD option as well to generate transfers text
-    if (transfers.checked && adTransfers.value) {
+    else if (transfers.checked && adTransfers.value) {
         createTransfersText(transfersText)
         document.getElementById('ad-choice').style.display = 'none'
-        //Otherwise an error message appears
-    } else {
+
+    }
+
+    //Otherwise an error message appears
+    else if (transfers.checked && adTransfers.value === '') {
+        therActText.textContent = ''
         document.getElementById('ad-choice').style.display = 'block'
     }
+
+    //Text generated if only bed mobility is checked
+    else if (bedMobility.checked) {
+        therActText.textContent = bedMobilityText
+    }
+
 })
 
 //Function that generates transfer text with users choice of AD
@@ -143,4 +159,5 @@ const createTransfersText = (str) => {
     const secondHalfStr = str.split(' ').splice(5, 23).join(' ')
     const combinedStr = firstHalfStr + ' ' + adTransfers.value + ' ' + secondHalfStr
     therActText.textContent = combinedStr
+    return combinedStr
 }
