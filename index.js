@@ -119,13 +119,19 @@ function multiChoice(str) {
 }
 
 therActCreateBtn.addEventListener('click', () => {
-    if (transfers.checked) {
-        therActText.textContent = transfersText
+    //User must select an AD option as well to generate transfers text
+    if (transfers.checked && ad.value) {
+        createTransfersText(transfersText)
+        document.getElementById('ad-choice').style.display = 'none'
+        //Otherwise an error message appears
+    } else {
+        document.getElementById('ad-choice').style.display = 'block'
     }
 })
 
+//Function that generates transfer text with users choice of AD
 const createTransfersText = (str) => {
-    console.log(ad.value);
+    //String is split and then rejoined with AD selection
     const firstHalfStr = str.split(' ').splice(0, 5).join(' ')
     const secondHalfStr = str.split(' ').splice(5, 23).join(' ')
     const combinedStr = firstHalfStr + ' ' + ad.value + ' ' + secondHalfStr

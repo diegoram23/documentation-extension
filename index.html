@@ -47,7 +47,6 @@
     </fieldset>
 
     <!------------------------------------------ Ther Act Fieldset -------------------------------------->
-    <form>
     <fieldset id="ther-act-fieldset">
         <legend>Therapeutic Activities</legend>
 
@@ -59,17 +58,18 @@
         <label for="ad">
             <span>AD</span>
             <select name="ad" id="ad">
-                <option value="">-- Select --</option>  
+                <option value="">-- Select --</option>
                 <option value="FWW">FWW</option>
                 <option value="4WW">4WW</option>
                 <option value="SPC">SPC</option>
-                <option value="Quad Cane">Quad Cane</option>  
+                <option value="Quad Cane">Quad Cane</option>
                 <option value="Hemi Walker">Hemi Walker</option>
                 <option value="Slide Board">Slide Board</option>
-                <option value="Hoyer Lift">Hoyer Lift</option>
+                <option value="wheelchair">wheelchair</option>
                 <option value="No AD">no AD</option>
             </select>
         </label>
+        <p id="ad-choice">Select an AD choice</p>
 
         <div class="text-box" id="ther-act-box">
         </div>
@@ -77,8 +77,37 @@
         <button id="ther-act-create-btn">Create</button>
         <button id="ther-act-copy-btn">Copy</button>
     </fieldset>
-    </form>
 
+    <!------------------------------------------ Gait Training Fieldset -------------------------------------->
+
+    <fieldset id="gait-fieldset">
+        <legend>Therapeutic Activities</legend>
+
+        <label for="gait-training">
+            <span>Gait Training</span>
+            <input type="checkbox" id="gait-training" name="gait-training" />
+        </label>
+
+        <label for="ad">
+            <span>AD</span>
+            <select name="ad" id="ad">
+                <option value="">-- Select --</option>
+                <option value="FWW">FWW</option>
+                <option value="4WW">4WW</option>
+                <option value="SPC">SPC</option>
+                <option value="Quad Cane">Quad Cane</option>
+                <option value="Hemi Walker">Hemi Walker</option>
+                <option value="No AD">no AD</option>
+            </select>
+        </label>
+        <p id="ad-choice">Select an AD choice</p>
+
+        <div class="text-box" id="gait-box">
+        </div>
+
+        <button id="gait-create-btn">Create</button>
+        <button id="gait-copy-btn">Copy</button>
+    </fieldset>
     <script src="index.js" type="module"></script>
 </body>
 

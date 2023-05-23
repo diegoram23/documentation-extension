@@ -37,3 +37,8 @@ select {
 button:hover {
     cursor: pointer;
 }
+
+#ad-choice {
+    margin: 0;
+    display: none;
+}
