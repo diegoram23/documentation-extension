@@ -39,8 +39,7 @@
             <input type="number" id="weights-ex" name="weights-ex" />
         </label>
 
-        <div class="text-box" id="ther-ex-box">
-        </div>
+        <div class="text-box" id="ther-ex-box"></div>
 
         <button id="ther-ex-create-btn">Create</button>
         <button id="ther-ex-copy-btn">Copy</button>
@@ -76,8 +75,7 @@
         </label>
         <p id="transfer-ad-error">Select an AD</p>
 
-        <div class="text-box" id="ther-act-box">
-        </div>
+        <div class="text-box" id="ther-act-box"></div>
 
         <button id="ther-act-create-btn">Create</button>
         <button id="ther-act-copy-btn">Copy</button>
@@ -113,9 +111,9 @@
         </label>
         <p id="gait-distance-error">Enter a correct value</p>
 
-        <label for="assistance">
+        <label for="gait-assistance">
             <span>Assistance</span>
-            <select name="assistance" id="assistance">
+            <select name="gait-assistance" id="gait-assistance">
                 <option value="">-- Select --</option>
                 <option value="M/I">M/I</option>
                 <option value="Supervision">Supervision</option>
@@ -124,9 +122,21 @@
                 <option value="Min Assist">Min</option>
                 <option value="Mod Assist">Mod</option>
                 <option value="Max Assist">Max</option>
-
             </select>
         </label>
+
+        <div class="text-box" id="gait-box"></div>
+
+        <button id="gait-create-btn">Create</button>
+        <button id="gait-copy-btn">Copy</button>
+
+    </fieldset>
+
+    <!------------------------------------------ Stair Training Fieldset -------------------------------------->
+
+
+    <fieldset id="stair-fieldset">
+        <legend>Stair Training</legend>
         <label for="stair-training">
             <span>Stair Training</span>
             <input type="checkbox" id="stair-training" name="stair-training" />
@@ -143,11 +153,24 @@
                 <option value="single railing and cane">Railing/Cane</option>
             </select>
         </label>
-        <div class="text-box" id="gait-box">
-        </div>
 
-        <button id="gait-create-btn">Create</button>
-        <button id="gait-copy-btn">Copy</button>
+        <label for="stairs-assistance">
+            <span>Assistance</span>
+            <select name="stairs-assistance" id="stairs-assistance">
+                <option value="">-- Select --</option>
+                <option value="M/I">M/I</option>
+                <option value="Supervision">Supervision</option>
+                <option value="SBA">SBA</option>
+                <option value="CGA">CGA</option>
+                <option value="Min Assist">Min</option>
+                <option value="Mod Assist">Mod</option>
+                <option value="Max Assist">Max</option>
+            </select>
+        </label>
+        <div class="text-box" id="stair-box"></div>
+
+        <button id="stair-create-btn">Create</button>
+        <button id="stair-copy-btn">Copy</button>
     </fieldset>
     <script src="index.js" type="module"></script>
 </body>

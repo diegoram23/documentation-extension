@@ -1,6 +1,7 @@
-import { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText } from "/data.js"
+import { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText, stairText } from "/data.js"
 
-/*----------------------------- Ther Ex variables ---------------------------------- */
+/*----------------------------- Ther Ex variables and Functions ---------------------------------- */
+
 const therExCreatBtn = document.getElementById('ther-ex-create-btn')
 const supineEx = document.getElementById('supine-ex')
 const seatedEx = document.getElementById('seated-ex')
@@ -8,24 +9,6 @@ const standingEx = document.getElementById('standing-ex')
 const weights = document.getElementById('weights-ex')
 const therExText = document.getElementById('ther-ex-box')
 const reps = document.getElementById('reps-ex')
-
-/*----------------------------- Ther Act variables ---------------------------------- */
-const therActCreateBtn = document.getElementById('ther-act-create-btn')
-const bedMobility = document.getElementById('bed-mobility')
-const transfers = document.getElementById('transfers')
-const therActText = document.getElementById('ther-act-box')
-const adTransfers = document.getElementById('ad-transfers')
-const transferAdError = document.getElementById('transfer-ad-error')
-
-/*----------------------------- Gait Training variables ---------------------------------- */
-const gaitCreateBtn = document.getElementById('gait-create-btn')
-const gaitAd = document.getElementById('ad-gait')
-const gaitTextBox = document.getElementById('gait-box')
-const gait = document.getElementById('gait-training')
-const stairs = document.getElementById('stair-training')
-const distance = document.getElementById('distance')
-const assistance = document.getElementById('assistance')
-const gaitDistanceError = document.getElementById('gait-distance-error')
 
 //Depending what exercise options user chooses, a specific function will be called
 therExCreatBtn.addEventListener('click', () => {
@@ -130,6 +113,14 @@ function renderMultiExText(str) {
 
 }
 
+/*----------------------------- Ther Act variables and Functions ---------------------------------- */
+const therActCreateBtn = document.getElementById('ther-act-create-btn')
+const bedMobility = document.getElementById('bed-mobility')
+const transfers = document.getElementById('transfers')
+const therActText = document.getElementById('ther-act-box')
+const adTransfers = document.getElementById('ad-transfers')
+const transferAdError = document.getElementById('transfer-ad-error')
+
 therActCreateBtn.addEventListener('click', () => {
 
     if (bedMobility.checked && transfers.checked && adTransfers.value !== '') {
@@ -166,10 +157,20 @@ const generateTransfersText = (str) => {
     return combinedStr
 }
 
+/*----------------------------- Gait Training variables and Functions ---------------------------------- */
+
+const gaitCreateBtn = document.getElementById('gait-create-btn')
+const gaitAd = document.getElementById('ad-gait')
+const gaitTextBox = document.getElementById('gait-box')
+const gaitTrng = document.getElementById('gait-training')
+const distance = document.getElementById('distance')
+const gaitAssistance = document.getElementById('gait-assistance')
+const gaitDistanceError = document.getElementById('gait-distance-error')
+
 
 gaitCreateBtn.addEventListener('click', () => {
     //Will run if all requirements are met
-    if (gait.checked && gaitAd.value >= 1) {
+    if (gaitTrng.checked && gaitAd.value >= 1) {
         gaitDistanceError.style.display = 'none'
         renderGaitText(gaitText)
     }
@@ -181,6 +182,17 @@ gaitCreateBtn.addEventListener('click', () => {
 
 //Function that generates gait text with users selection
 const renderGaitText = (str) => {
-    let gaitStr = str.replace('FWW', gaitAd.value).replace('150', distance.value).replace('CGA', assistance.value)
+    let gaitStr = str.replace('FWW', gaitAd.value).replace('150', distance.value).replace('CGA', gaitAssistance.value)
     gaitTextBox.textContent = gaitStr
 }
+
+/*----------------------------- Stair Training variables and Functions ---------------------------------- */
+
+const stairCreateBtn = document.getElementById('stair-create-btn')
+const stairTrng = document.getElementById('stair-training')
+const railings = document.getElementById('railings')
+const stairsAssistance = document.getElementById('stairs-assistance')
+
+stairCreateBtn.addEventListener('click', () => {
+    console.log('yes');
+})
