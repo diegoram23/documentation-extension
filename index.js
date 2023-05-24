@@ -119,12 +119,13 @@ const bedMobility = document.getElementById('bed-mobility')
 const transfers = document.getElementById('transfers')
 const therActText = document.getElementById('ther-act-box')
 const adTransfers = document.getElementById('ad-transfers')
+const transfersAssistance = document.getElementById('transfers-assistance')
 const transferAdError = document.getElementById('transfer-ad-error')
 
 therActCreateBtn.addEventListener('click', () => {
 
     if (bedMobility.checked && transfers.checked && adTransfers.value !== '') {
-        therActText.textContent = bedMobilityText + generateTransfersText(transfersText)
+        therActText.textContent = bedMobilityText + createTransfersText(transfersText)
     }
 
     //User must select an AD option as well to generate transfers text
@@ -140,6 +141,11 @@ therActCreateBtn.addEventListener('click', () => {
         transferAdError.style.display = 'block'
     }
 
+    else if (transfers.checked && transfersAssistance.value === '') {
+        therActText.textContent = ''
+        transferAdError.style.display = 'block'
+    }
+
     //Text generated if only bed mobility is checked
     else if (bedMobility.checked) {
         therActText.textContent = bedMobilityText
@@ -148,12 +154,14 @@ therActCreateBtn.addEventListener('click', () => {
 })
 
 //Function that generates transfer text with users choice of AD
-const generateTransfersText = (str) => {
+function createTransfersText(str) {
     //String is split and then rejoined with AD selection
     const firstHalfStr = str.split(' ').splice(0, 5).join(' ')
+    console.log('first', firstHalfStr);
     const secondHalfStr = str.split(' ').splice(5, 23).join(' ')
+    console.log('second', secondHalfStr);
     const combinedStr = firstHalfStr + ' ' + adTransfers.value + ' ' + secondHalfStr
-    therActText.textContent = combinedStr
+    therActText.textContent = combinedStr.replace('CGA', transfersAssistance.value)
     return combinedStr
 }
 

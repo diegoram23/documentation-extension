@@ -9,7 +9,7 @@ const retText = "Exercises done with # ankle weights for RET."
 
 const bedMobilityText = "Instruction in proper bed mobility training with cues for rolling and scooting using hands/feet and weight shifting technique to decrease level of assistance needed. "
 
-const transfersText = "Instruction in transfer training with with cues for proper hand/foot placement, weight shifting technique, and postural control to increase independence with functional activities."
+const transfersText = "Instruction in transfer training with CGA with cues for proper hand/foot placement, weight shifting technique, and postural control to increase independence with functional activities."
 
 const gaitText = "Instruction in GT with FWW 150 feet at CGA with cues to facilitate heel strike, increase stride length, and maintain upright posture to normalize gait pattern."
 
