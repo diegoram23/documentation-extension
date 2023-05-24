@@ -125,12 +125,12 @@ const transferAdError = document.getElementById('transfer-ad-error')
 therActCreateBtn.addEventListener('click', () => {
 
     if (bedMobility.checked && transfers.checked && adTransfers.value !== '') {
-        therActText.textContent = bedMobilityText + createTransfersText(transfersText)
+        therActText.textContent = bedMobilityText + renderTransferText(transfersText)
     }
 
     //User must select an AD option as well to generate transfers text
     else if (transfers.checked && adTransfers.value) {
-        createTransfersText(transfersText)
+        renderTransferText(transfersText)
         transferAdError.style.display = 'none'
 
     }
@@ -154,7 +154,7 @@ therActCreateBtn.addEventListener('click', () => {
 })
 
 //Function that generates transfer text with users choice of AD
-function createTransfersText(str) {
+function renderTransferText(str) {
     //String is split and then rejoined with AD selection
     const firstHalfStr = str.split(' ').splice(0, 5).join(' ')
     console.log('first', firstHalfStr);
@@ -197,10 +197,23 @@ const renderGaitText = (str) => {
 /*----------------------------- Stair Training variables and Functions ---------------------------------- */
 
 const stairCreateBtn = document.getElementById('stair-create-btn')
+const stairsTextBox = document.getElementById('stairs-box')
 const stairTrng = document.getElementById('stair-training')
 const railings = document.getElementById('railings')
 const stairsAssistance = document.getElementById('stairs-assistance')
+const numSteps = document.getElementById('num-steps')
+const stairsError = document.getElementById('stairs-error')
 
 stairCreateBtn.addEventListener('click', () => {
-    console.log('yes');
+    if (railings.value == '' || stairsAssistance.value == '' || numSteps.value == '0') {
+        stairsError.style.display = 'block'
+    }
+     else if (stairTrng.checked) {
+        stairsError.style.display = 'none'
+        renderStairsText(stairText)
+    }
 })
+
+function renderStairsText(str) {
+    stairsTextBox.textContent = stairText.replace('two railings', railings.value).replace('CGA', stairsAssistance.value).replace(10, numSteps.value)
+}

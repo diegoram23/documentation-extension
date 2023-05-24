@@ -118,13 +118,13 @@
                 <option value="No AD">no AD</option>
             </select>
         </label>
-        <p id="gait-ad-error">Select an AD choice</p>
 
         <label for="distance">
             <span>Feet Distance</span>
             <input type="number" id="distance" name="distance" value="0" />
         </label>
-        <p id="gait-distance-error">Enter a correct value</p>
+
+        <p id="gait-distance-error">Complete all values</p>
 
         <label for="gait-assistance">
             <span>Assistance</span>
@@ -182,7 +182,15 @@
                 <option value="Max Assist">Max</option>
             </select>
         </label>
-        <div class="text-box" id="stair-box"></div>
+
+
+        <label for="num-steps">
+            <span>Steps</span>
+            <input type="number" id="num-steps" name="num-steps" value="0" />
+        </label>
+
+        <p id="stairs-error">Complete all values</p>
+        <div class="text-box" id="stairs-box"></div>
 
         <button id="stair-create-btn">Create</button>
         <button id="stair-copy-btn">Copy</button>

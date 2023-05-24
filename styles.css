@@ -1,3 +1,10 @@
+body {
+    max-width:370px;
+    min-height: 100vh;
+    padding-top: 1em;
+    margin: 0 auto;
+}
+
 
 legend {
     text-align: center;
@@ -14,6 +21,8 @@ legend {
 fieldset {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1em;
+    background-color: rgb(243, 243, 243);
 }
 
 input {
@@ -38,7 +47,7 @@ button:hover {
     cursor: pointer;
 }
 
-#gait-ad-error, #transfer-ad-error, #gait-distance-error  {
+#gait-ad-error, #transfer-ad-error, #gait-distance-error, #stairs-error  {
     margin: 0;
     display: none;
 }
