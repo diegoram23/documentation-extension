@@ -15,54 +15,58 @@ const bedMobility = document.getElementById('bed-mobility')
 const transfers = document.getElementById('transfers')
 const therActText = document.getElementById('ther-act-box')
 const adTransfers = document.getElementById('ad-transfers')
+const transferAdError = document.getElementById('transfer-ad-error')
 
 /*----------------------------- Gait Training variables ---------------------------------- */
 const gaitCreateBtn = document.getElementById('gait-create-btn')
-const gaitTextBox = document.getElementById('gait-text-box')
+const gaitAd = document.getElementById('ad-gait')
+const gaitTextBox = document.getElementById('gait-box')
 const gait = document.getElementById('gait-training')
 const stairs = document.getElementById('stair-training')
-
+const distance = document.getElementById('distance')
+const assistance = document.getElementById('assistance')
+const gaitDistanceError = document.getElementById('gait-distance-error')
 
 //Depending what exercise options user chooses, a specific function will be called
 therExCreatBtn.addEventListener('click', () => {
 
     if (supineEx.checked && seatedEx.checked && standingEx.checked) {
         combinedStr = supineExText + ' ' + seatedExText + ' ' + standingExText
-        multiChoice(combinedStr)
+        renderMultiExText(combinedStr)
     }
 
     else if (seatedEx.checked && supineEx.checked) {
         combinedStr = supineExText + ' ' + seatedExText
-        dualChoice(combinedStr)
+        renderDualExText(combinedStr)
     }
 
     else if (seatedEx.checked && standingEx.checked) {
         combinedStr = standingExText + ' ' + seatedExText
-        dualChoice(combinedStr)
+        renderDualExText(combinedStr)
     }
 
     else if (supineEx.checked && standingEx.checked) {
         combinedStr = supineExText + ' ' + standingExText
-        dualChoice(combinedStr)
+        renderDualExText(combinedStr)
     }
 
     else if (supineEx.checked) {
-        singleChoiceText(supineExText)
+        renderSingleExText(supineExText)
     }
 
     else if (seatedEx.checked) {
-        singleChoiceText(seatedExText)
+        renderSingleExText(seatedExText)
     }
 
     else if (standingEx.checked) {
-        singleChoiceText(standingExText)
+        renderSingleExText(standingExText)
     }
 
 
 })
 
 //Function called if user chooses only one exercise option
-function singleChoiceText(str) {
+function renderSingleExText(str) {
     //Edits number of reps text if user chooses to
     let weightsText = retText.replace('#', weights.value + '#')
     let repsText = str.replace('x10', 'x' + reps.value)
@@ -77,7 +81,7 @@ function singleChoiceText(str) {
 }
 
 //Function called if user chooses any two exercise options
-function dualChoice(str) {
+function renderDualExText(str) {
 
     let combinedStr = str.split(' ')
 
@@ -103,7 +107,7 @@ function dualChoice(str) {
 
 
 //Function called if user chooses all three exercise options
-function multiChoice(str) {
+function renderMultiExText(str) {
     let combinedStr = str.split(' ')
 
     //Splits entire string into three and removes repeated words
@@ -129,20 +133,20 @@ function multiChoice(str) {
 therActCreateBtn.addEventListener('click', () => {
 
     if (bedMobility.checked && transfers.checked && adTransfers.value !== '') {
-        therActText.textContent = bedMobilityText + createTransfersText(transfersText)
+        therActText.textContent = bedMobilityText + generateTransfersText(transfersText)
     }
 
     //User must select an AD option as well to generate transfers text
     else if (transfers.checked && adTransfers.value) {
         createTransfersText(transfersText)
-        document.getElementById('ad-choice').style.display = 'none'
+        transferAdError.style.display = 'none'
 
     }
 
     //Otherwise an error message appears
     else if (transfers.checked && adTransfers.value === '') {
         therActText.textContent = ''
-        document.getElementById('ad-choice').style.display = 'block'
+        transferAdError.style.display = 'block'
     }
 
     //Text generated if only bed mobility is checked
@@ -153,11 +157,30 @@ therActCreateBtn.addEventListener('click', () => {
 })
 
 //Function that generates transfer text with users choice of AD
-const createTransfersText = (str) => {
+const generateTransfersText = (str) => {
     //String is split and then rejoined with AD selection
     const firstHalfStr = str.split(' ').splice(0, 5).join(' ')
     const secondHalfStr = str.split(' ').splice(5, 23).join(' ')
     const combinedStr = firstHalfStr + ' ' + adTransfers.value + ' ' + secondHalfStr
     therActText.textContent = combinedStr
     return combinedStr
+}
+
+
+gaitCreateBtn.addEventListener('click', () => {
+    //Will run if all requirements are met
+    if (gait.checked && gaitAd.value >= 1) {
+        gaitDistanceError.style.display = 'none'
+        renderGaitText(gaitText)
+    }
+    //Otherwise an error message appears1````````````````````````````
+    else {
+        gaitDistanceError.style.display = 'block'
+    }
+})
+
+//Function that generates gait text with users selection
+const renderGaitText = (str) => {
+    let gaitStr = str.replace('FWW', gaitAd.value).replace('150', distance.value).replace('CGA', assistance.value)
+    gaitTextBox.textContent = gaitStr
 }

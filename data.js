@@ -11,7 +11,7 @@ const bedMobilityText = "Instruction in proper bed mobility training with cues f
 
 const transfersText = "Instruction in transfer training with with cues for proper hand/foot placement, weight shifting technique, and postural control to increase independence with functional activities."
 
-const gaitText = "Instruction in GT with FWW 150'x2 at CGA with cues to facilitate heel strike, increase stride length, and maintain upright posture to normalize gait pattern."
+const gaitText = "Instruction in GT with FWW 150 feet at CGA with cues to facilitate heel strike, increase stride length, and maintain upright posture to normalize gait pattern."
 
 export { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText }
 

@@ -38,7 +38,7 @@ button:hover {
     cursor: pointer;
 }
 
-#ad-choice {
+#gait-ad-error, #transfer-ad-error, #gait-distance-error  {
     margin: 0;
     display: none;
 }

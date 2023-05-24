@@ -74,7 +74,7 @@
                 <option value="No AD">no AD</option>
             </select>
         </label>
-        <p id="ad-choice">Select an AD choice</p>
+        <p id="transfer-ad-error">Select an AD</p>
 
         <div class="text-box" id="ther-act-box">
         </div>
@@ -86,7 +86,7 @@
     <!------------------------------------------ Gait Training Fieldset -------------------------------------->
 
     <fieldset id="gait-fieldset">
-        <legend>Therapeutic Activities</legend>
+        <legend>Gait Training</legend>
 
         <label for="gait-training">
             <span>Gait Training</span>
@@ -105,9 +105,28 @@
                 <option value="No AD">no AD</option>
             </select>
         </label>
-        <p id="ad-choice">Select an AD choice</p>
+        <p id="gait-ad-error">Select an AD choice</p>
 
+        <label for="distance">
+            <span>Feet Distance</span>
+            <input type="number" id="distance" name="distance" value="0" />
+        </label>
+        <p id="gait-distance-error">Enter a correct value</p>
 
+        <label for="assistance">
+            <span>Assistance</span>
+            <select name="assistance" id="assistance">
+                <option value="">-- Select --</option>
+                <option value="M/I">M/I</option>
+                <option value="Supervision">Supervision</option>
+                <option value="SBA">SBA</option>
+                <option value="CGA">CGA</option>
+                <option value="Min Assist">Min</option>
+                <option value="Mod Assist">Mod</option>
+                <option value="Max Assist">Max</option>
+
+            </select>
+        </label>
         <label for="stair-training">
             <span>Stair Training</span>
             <input type="checkbox" id="stair-training" name="stair-training" />
