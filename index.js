@@ -9,27 +9,28 @@ const standingEx = document.getElementById('standing-ex')
 const weights = document.getElementById('weights-ex')
 const therExText = document.getElementById('ther-ex-box')
 const reps = document.getElementById('reps-ex')
+const therExCopyBtn = document.getElementById('ther-ex-copy-btn')
 
 //Depending what exercise options user chooses, a specific function will be called
 therExCreatBtn.addEventListener('click', () => {
 
     if (supineEx.checked && seatedEx.checked && standingEx.checked) {
-       let combinedStr = supineExText + ' ' + seatedExText + ' ' + standingExText
+        let combinedStr = supineExText + ' ' + seatedExText + ' ' + standingExText
         renderMultiExText(combinedStr)
     }
 
     else if (seatedEx.checked && supineEx.checked) {
-       let combinedStr = supineExText + ' ' + seatedExText
+        let combinedStr = supineExText + ' ' + seatedExText
         renderDualExText(combinedStr)
     }
 
     else if (seatedEx.checked && standingEx.checked) {
-       let combinedStr = standingExText + ' ' + seatedExText
+        let combinedStr = standingExText + ' ' + seatedExText
         renderDualExText(combinedStr)
     }
 
     else if (supineEx.checked && standingEx.checked) {
-       let combinedStr = supineExText + ' ' + standingExText
+        let combinedStr = supineExText + ' ' + standingExText
         renderDualExText(combinedStr)
     }
 
@@ -61,6 +62,7 @@ function renderSingleExText(str) {
         //Only exercise text appears
         therExText.textContent = repsText
     }
+    console.log(therExText.textContent);
 }
 
 //Function called if user chooses any two exercise options
@@ -113,6 +115,14 @@ function renderMultiExText(str) {
 
 }
 
+therExCopyBtn.addEventListener('click', () => {
+    let textCopy = ''
+    if (therExText.textContent !== '') {
+        textCopy = therExText.textContent
+        navigator.clipboard.writeText(textCopy)
+    }
+})
+
 /*----------------------------- Ther Act variables and Functions ---------------------------------- */
 const therActCreateBtn = document.getElementById('ther-act-create-btn')
 const bedMobility = document.getElementById('bed-mobility')
@@ -121,6 +131,7 @@ const therActText = document.getElementById('ther-act-box')
 const adTransfers = document.getElementById('ad-transfers')
 const transfersAssistance = document.getElementById('transfers-assistance')
 const transferAdError = document.getElementById('transfer-ad-error')
+const therActCopyBtn = document.getElementById('ther-act-copy-btn')
 
 therActCreateBtn.addEventListener('click', () => {
 
@@ -166,6 +177,14 @@ function renderTransferText(str) {
     return combinedStr
 }
 
+therActCopyBtn.addEventListener('click', () => {
+    let textCopy = ''
+    if (therActText.textContent !== '') {
+        textCopy = therActText.textContent
+        navigator.clipboard.writeText(textCopy)
+    }
+})
+
 /*----------------------------- Gait Training variables and Functions ---------------------------------- */
 
 const gaitCreateBtn = document.getElementById('gait-create-btn')
@@ -175,6 +194,7 @@ const gaitTrng = document.getElementById('gait-training')
 const distance = document.getElementById('distance')
 const gaitAssistance = document.getElementById('gait-assistance')
 const gaitDistanceError = document.getElementById('gait-distance-error')
+const gaitCopyBtn = document.getElementById('gait-copy-btn')
 
 
 gaitCreateBtn.addEventListener('click', () => {
@@ -196,6 +216,14 @@ const renderGaitText = (str) => {
     gaitTextBox.textContent = gaitStr
 }
 
+gaitCopyBtn.addEventListener('click', () => {
+    let textCopy = ''
+    if (gaitTextBox.textContent !== '') {
+        textCopy = gaitTextBox.textContent
+        navigator.clipboard.writeText(textCopy)
+    }
+})
+
 /*----------------------------- Stair Training variables and Functions ---------------------------------- */
 
 const stairCreateBtn = document.getElementById('stair-create-btn')
@@ -205,12 +233,13 @@ const railings = document.getElementById('railings')
 const stairsAssistance = document.getElementById('stairs-assistance')
 const numSteps = document.getElementById('num-steps')
 const stairsError = document.getElementById('stairs-error')
+const stairsCopyBtn = document.getElementById('stairs-copy-btn')
 
 stairCreateBtn.addEventListener('click', () => {
     if (railings.value == '' || stairsAssistance.value == '' || numSteps.value == '0') {
         stairsError.style.display = 'block'
     }
-     else if (stairTrng.checked) {
+    else if (stairTrng.checked) {
         stairsError.style.display = 'none'
         renderStairsText(stairText)
     }
@@ -219,3 +248,11 @@ stairCreateBtn.addEventListener('click', () => {
 function renderStairsText(str) {
     stairsTextBox.textContent = stairText.replace('two railings', railings.value).replace('CGA', stairsAssistance.value).replace(10, numSteps.value)
 }
+
+stairsCopyBtn.addEventListener('click', () => {
+    let textCopy = ''
+    if (stairsTextBox.textContent !== '') {
+        textCopy = stairsTextBox.textContent
+        navigator.clipboard.writeText(textCopy)
+    }
+})
