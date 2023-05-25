@@ -53,6 +53,10 @@ select {
     margin: 0.5em;
 }
 
+select:hover {
+    cursor: pointer;
+}
+
 .btn-container {
     display: flex;
     justify-content: space-between;
@@ -75,11 +79,28 @@ button {
 .text {
     background-color: #fff;
     color: rgb(66, 161, 224);
-    font-weight: bold;
 }
 
-button:hover {
+.text:hover {
+    background-color: rgb(66, 161, 224);
+    color: #fff;
     cursor: pointer;
+}
+
+.copy:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: rgb(66, 161, 224);
+}
+
+.copy:active {
+    background-color: rgb(66, 161, 224);
+    color: #fff;
+}
+
+.text:active {
+    background-color: #fff;
+    color: rgb(66, 161, 224);
 }
 
 #gait-ad-error,
