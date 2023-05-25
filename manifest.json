@@ -3,7 +3,11 @@
     "version": "1.1",
     "name": "Documentation Extension",
     "action": {
-        "default_popup": "index.html",
-        "default_icon": "icon.svg"
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "16": "icon.svg",
+        "48": "icon.svg",
+        "128": "icon.svg"
     }
 }
