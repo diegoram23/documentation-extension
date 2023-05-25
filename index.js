@@ -1,4 +1,4 @@
-import { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText, stairText } from "/data.js"
+import { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText, stairText } from "./data.js"
 
 /*----------------------------- Ther Ex variables and Functions ---------------------------------- */
 
