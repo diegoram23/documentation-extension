@@ -1,18 +1,29 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&display=swap');
+
 body {
-    max-width:370px;
+    max-width: 370px;
     min-height: 100vh;
     padding-top: 1em;
     margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
 }
 
 
 legend {
     text-align: center;
+    background-color: rgb(66, 161, 224);
+    color: #fff;
+    font-weight: bold;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 18px;
+
 }
 
 .text-box {
     border: 1px solid #2d2d2d;
-    height: 200px;
+    height: 170px;
     width: 330px;
     margin-top: 1em;
     padding: 0.3em;
@@ -22,18 +33,18 @@ fieldset {
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
-    background-color: rgb(243, 243, 243);
 }
 
 input {
     margin: 0.5em 0;
 }
 
-input[type=checkbox]:hover, label:hover{
+input[type=checkbox]:hover,
+label:hover {
     cursor: pointer;
 }
 
- input[type=number] {
+input[type=number] {
     width: 40px
 }
 
@@ -42,12 +53,39 @@ select {
     margin: 0.5em;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    border-radius: 5px;
+    border: 1px solid #2d2d2d;
+    width: 120px;
+    padding: 0.4em 0.8em;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.copy {
+    background-color: rgb(66, 161, 224);
+    color: #fff;
+}
+
+.text {
+    background-color: #fff;
+    color: rgb(66, 161, 224);
+    font-weight: bold;
+}
 
 button:hover {
     cursor: pointer;
 }
 
-#gait-ad-error, #transfer-ad-error, #gait-distance-error, #stairs-error  {
+#gait-ad-error,
+#transfer-ad-error,
+#gait-distance-error,
+#stairs-error {
     margin: 0;
     display: none;
 }

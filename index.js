@@ -14,22 +14,22 @@ const reps = document.getElementById('reps-ex')
 therExCreatBtn.addEventListener('click', () => {
 
     if (supineEx.checked && seatedEx.checked && standingEx.checked) {
-        combinedStr = supineExText + ' ' + seatedExText + ' ' + standingExText
+       let combinedStr = supineExText + ' ' + seatedExText + ' ' + standingExText
         renderMultiExText(combinedStr)
     }
 
     else if (seatedEx.checked && supineEx.checked) {
-        combinedStr = supineExText + ' ' + seatedExText
+       let combinedStr = supineExText + ' ' + seatedExText
         renderDualExText(combinedStr)
     }
 
     else if (seatedEx.checked && standingEx.checked) {
-        combinedStr = standingExText + ' ' + seatedExText
+       let combinedStr = standingExText + ' ' + seatedExText
         renderDualExText(combinedStr)
     }
 
     else if (supineEx.checked && standingEx.checked) {
-        combinedStr = supineExText + ' ' + standingExText
+       let combinedStr = supineExText + ' ' + standingExText
         renderDualExText(combinedStr)
     }
 
@@ -125,7 +125,7 @@ const transferAdError = document.getElementById('transfer-ad-error')
 therActCreateBtn.addEventListener('click', () => {
 
     if (bedMobility.checked && transfers.checked && adTransfers.value !== '') {
-        therActText.textContent = bedMobilityText + renderTransferText(transfersText)
+        therActText.textContent = bedMobilityText + renderTransferText(transfersText).replace('CGA', transfersAssistance.value)
     }
 
     //User must select an AD option as well to generate transfers text
@@ -155,6 +155,7 @@ therActCreateBtn.addEventListener('click', () => {
 
 //Function that generates transfer text with users choice of AD
 function renderTransferText(str) {
+    console.log(transfersAssistance.value);
     //String is split and then rejoined with AD selection
     const firstHalfStr = str.split(' ').splice(0, 5).join(' ')
     console.log('first', firstHalfStr);
@@ -178,13 +179,14 @@ const gaitDistanceError = document.getElementById('gait-distance-error')
 
 gaitCreateBtn.addEventListener('click', () => {
     //Will run if all requirements are met
-    if (gaitTrng.checked && gaitAd.value >= 1) {
-        gaitDistanceError.style.display = 'none'
-        renderGaitText(gaitText)
+    if (!gaitTrng.checked && gaitAd.value <= 0 && gaitAssistance == '' && distance.value <= 0) {
+        gaitDistanceError.style.display = 'block'
     }
     //Otherwise an error message appears1````````````````````````````
     else {
         gaitDistanceError.style.display = 'block'
+        gaitDistanceError.style.display = 'none'
+        renderGaitText(gaitText)
     }
 })
 
