@@ -13,7 +13,7 @@ const transfersText = "Instruction in transfer training with CGA with cues for p
 
 const gaitText = "Instruction in GT with FWW 150 feet at CGA with cues to facilitate heel strike, increase stride length, and maintain upright posture to normalize gait pattern."
 
-const stairText = "Instruction in stair training using two railings with cues for which LE to ascend and descend with to improve safety and stability. Patient able to negotiate 10 steps at CGA. "
+const stairText = "Instruction in stair training using two railings with cues for which LE to ascend and descend with to improve safety and stability. Patient able to negotiate 10 steps at CGA level. "
 
 export { supineExText, seatedExText, standingExText, retText, bedMobilityText, transfersText, gaitText, stairText }
 

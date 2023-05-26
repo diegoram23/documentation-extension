@@ -124,6 +124,7 @@ therExCopyBtn.addEventListener('click', () => {
 })
 
 /*----------------------------- Ther Act variables and Functions ---------------------------------- */
+
 const therActCreateBtn = document.getElementById('ther-act-create-btn')
 const bedMobility = document.getElementById('bed-mobility')
 const transfers = document.getElementById('transfers')
@@ -190,7 +191,6 @@ therActCopyBtn.addEventListener('click', () => {
 const gaitCreateBtn = document.getElementById('gait-create-btn')
 const gaitAd = document.getElementById('ad-gait')
 const gaitTextBox = document.getElementById('gait-box')
-const gaitTrng = document.getElementById('gait-training')
 const distance = document.getElementById('distance')
 const gaitAssistance = document.getElementById('gait-assistance')
 const gaitDistanceError = document.getElementById('gait-distance-error')
@@ -199,14 +199,15 @@ const gaitCopyBtn = document.getElementById('gait-copy-btn')
 
 gaitCreateBtn.addEventListener('click', () => {
     //Will run if all requirements are met
-    if (!gaitTrng.checked && gaitAd.value <= 0 && gaitAssistance == '' && distance.value <= 0) {
-        gaitDistanceError.style.display = 'block'
+    if (gaitAd.value !== '' && gaitAssistance.value !== '' && distance.value >= 1) {
+        gaitDistanceError.style.display = 'none'
+        renderGaitText(gaitText)
     }
     //Otherwise an error message appears1````````````````````````````
     else {
+        gaitTextBox.textContent = ''
         gaitDistanceError.style.display = 'block'
-        gaitDistanceError.style.display = 'none'
-        renderGaitText(gaitText)
+
     }
 })
 
@@ -228,7 +229,6 @@ gaitCopyBtn.addEventListener('click', () => {
 
 const stairCreateBtn = document.getElementById('stair-create-btn')
 const stairsTextBox = document.getElementById('stairs-box')
-const stairTrng = document.getElementById('stair-training')
 const railings = document.getElementById('railings')
 const stairsAssistance = document.getElementById('stairs-assistance')
 const numSteps = document.getElementById('num-steps')
@@ -236,12 +236,13 @@ const stairsError = document.getElementById('stairs-error')
 const stairsCopyBtn = document.getElementById('stairs-copy-btn')
 
 stairCreateBtn.addEventListener('click', () => {
-    if (railings.value == '' || stairsAssistance.value == '' || numSteps.value == '0') {
-        stairsError.style.display = 'block'
-    }
-    else if (stairTrng.checked) {
+    if (railings.value !== '' && stairsAssistance.value !== '' && numSteps.value >= 1) {
         stairsError.style.display = 'none'
         renderStairsText(stairText)
+    }
+    else {
+        stairsError.style.display = 'block'
+        stairsTextBox.textContent = ''
     }
 })
 
