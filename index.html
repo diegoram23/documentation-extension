@@ -36,12 +36,12 @@
 
             <label for="reps-ex">
                 <span>Reps</span>
-                <input type="number" id="reps-ex" name="reps-ex" value="10" />
+                <input type="number" id="reps-ex" name="reps-ex" min="0" value="10" />
             </label>
 
             <label class='drop-down' for="weights-ex">
                 <span>Weights</span>
-                <input type="number" id="weights-ex" name="weights-ex" />
+                <input type="number" id="weights-ex" min="0" name="weights-ex" />
             </label>
 
             <div class="text-box" id="ther-ex-box"></div>
@@ -136,7 +136,7 @@
 
             <label for="distance">
                 <span>Feet Distance</span>
-                <input type="number" id="distance" name="distance" value="0" />
+                <input type="number" id="distance" min="0" name="distance" value="0" />
             </label>
 
             <p id="gait-distance-error">Complete all values</p>
@@ -203,7 +203,7 @@
 
             <label for="num-steps">
                 <span>Steps</span>
-                <input type="number" id="num-steps" name="num-steps" value="0" />
+                <input type="number" id="num-steps" min="0" name="num-steps" value="0" />
             </label>
 
             <p id="stairs-error">Complete all values</p>
