@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <h1>Quick Rehab Notes</h1>
+
+    <h3>Simply choose a category and click some boxes!</h3>
     <!------------------------------------------ Ther Ex Fieldset -------------------------------------->
     <fieldset>
 
@@ -37,7 +40,7 @@
                 <input type="number" id="reps-ex" name="reps-ex" value="10" />
             </label>
 
-            <label for="weights-ex">
+            <label class='drop-down' for="weights-ex">
                 <span>Weights</span>
                 <input type="number" id="weights-ex" name="weights-ex" />
             </label>
@@ -57,7 +60,7 @@
     <fieldset>
 
         <legend id="ther-act-legend">Therapeutic Activities</legend>
-        
+
         <div class='hide' id="ther-act-fieldset">
             <label for="bed-mobility">
                 <span>Bed Mobility</span>
@@ -139,7 +142,7 @@
 
             <p id="gait-distance-error">Complete all values</p>
 
-            <label for="gait-assistance">
+            <label class='drop-down' for="gait-assistance">
                 <span>Assistance</span>
                 <select name="gait-assistance" id="gait-assistance">
                     <option value="">-- Select --</option>

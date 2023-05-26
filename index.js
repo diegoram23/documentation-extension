@@ -15,7 +15,7 @@ const therExCopyBtn = document.getElementById('ther-ex-copy-btn')
 
 //Toggles Display
 toggleTherEx.addEventListener('click', () => {
-    if (therExDisplay.style.display === 'none') {
+    if (therExDisplay.style.display !== 'block') {
         therExDisplay.style.display = 'block'
     } else {
         therExDisplay.style.display = 'none'
@@ -150,7 +150,7 @@ const therActCopyBtn = document.getElementById('ther-act-copy-btn')
 
 //Toggles Display
 toggleTherAct.addEventListener('click', () => {
-    if (therActDisplay.style.display === 'none') {
+    if (therActDisplay.style.display !== 'block') {
         therActDisplay.style.display = 'block'
     } else {
         therActDisplay.style.display = 'none'
@@ -223,7 +223,7 @@ const gaitCopyBtn = document.getElementById('gait-copy-btn')
 
 //Toggles Display
 toggleGait.addEventListener('click', () => {
-    if (gaitDisplay.style.display === 'none') {
+    if (gaitDisplay.style.display !== 'block') {
         gaitDisplay.style.display = 'block'
     } else {
         gaitDisplay.style.display = 'none'
@@ -274,9 +274,10 @@ const stairsCopyBtn = document.getElementById('stairs-copy-btn')
 
 //Toggles Display
 toggleStairs.addEventListener('click', () => {
-    if (stairsDisplay.style.display === 'none') {
+    if (stairsDisplay.style.display !== 'block') {
         stairsDisplay.style.display = 'block'
     } else {
+        console.log('here');
         stairsDisplay.style.display = 'none'
     }
 })
