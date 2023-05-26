@@ -11,141 +11,154 @@
 
 <body>
     <!------------------------------------------ Ther Ex Fieldset -------------------------------------->
-    <fieldset id="ther-ex-fieldset">
-        <legend>Therapeutic Exercises</legend>
+    <fieldset>
 
-        <label for="supine-ex">
-            <span>Supine Exercises</span>
-            <input type="checkbox" id="supine-ex" name="ther-ex" />
-        </label>
+        <legend id="ther-ex-legend">Therapeutic Exercises</legend>
 
-        <label for="seated-ex">
-            <span>Seated Exercises</span>
-            <input type="checkbox" id="seated-ex" name="ther-ex" />
-        </label>
+        <div class='hide' id="ther-ex-fieldset">
 
-        <label for="standing-ex">
-            <span>Standing Exercises</span>
-            <input type="checkbox" id="standing-ex" name="ther-ex" />
-        </label>
+            <label for="supine-ex">
+                <span>Supine Exercises</span>
+                <input type="checkbox" id="supine-ex" name="supine-ex" />
+            </label>
 
-        <label for="reps-ex">
-            <span>Reps</span>
-            <input type="number" id="reps-ex" name="reps-ex" value="10" />
-        </label>
+            <label for="seated-ex">
+                <span>Seated Exercises</span>
+                <input type="checkbox" id="seated-ex" name="seated-ex" />
+            </label>
 
-        <label for="weights-ex">
-            <span>Weights</span>
-            <input type="number" id="weights-ex" name="weights-ex" />
-        </label>
+            <label for="standing-ex">
+                <span>Standing Exercises</span>
+                <input type="checkbox" id="standing-ex" name="standing-ex" />
+            </label>
 
-        <div class="text-box" id="ther-ex-box"></div>
+            <label for="reps-ex">
+                <span>Reps</span>
+                <input type="number" id="reps-ex" name="reps-ex" value="10" />
+            </label>
 
-        <div class="btn-container">
-            <button class='text' id="ther-ex-create-btn">Create</button>
-            <button class='copy' id="ther-ex-copy-btn">Copy</button>
+            <label for="weights-ex">
+                <span>Weights</span>
+                <input type="number" id="weights-ex" name="weights-ex" />
+            </label>
+
+            <div class="text-box" id="ther-ex-box"></div>
+
+            <div class="btn-container">
+                <button class='text' id="ther-ex-create-btn">Create</button>
+                <button class='copy' id="ther-ex-copy-btn">Copy</button>
+            </div>
+
         </div>
 
     </fieldset>
 
     <!------------------------------------------ Ther Act Fieldset -------------------------------------->
-    <fieldset id="ther-act-fieldset">
-        <legend>Therapeutic Activities</legend>
+    <fieldset>
 
-        <label for="bed mobility">
-            <span>Bed Mobility</span>
-            <input type="checkbox" id="bed-mobility" name="bed-mobility" />
-        </label>
+        <legend id="ther-act-legend">Therapeutic Activities</legend>
+        
+        <div class='hide' id="ther-act-fieldset">
+            <label for="bed-mobility">
+                <span>Bed Mobility</span>
+                <input type="checkbox" id="bed-mobility" name="bed-mobility" />
+            </label>
 
-        <label for="transfers">
-            <span>Transfers</span>
-            <input type="checkbox" id="transfers" name="transfers" />
-        </label>
+            <label for="transfers">
+                <span>Transfers</span>
+                <input type="checkbox" id="transfers" name="transfers" />
+            </label>
 
-        <label for="ad-transfers">
-            <span>AD</span>
-            <select name="ad-transfers" id="ad-transfers">
-                <option value="">-- Select --</option>
-                <option value="FWW">FWW</option>
-                <option value="4WW">4WW</option>
-                <option value="SPC">SPC</option>
-                <option value="Quad Cane">Quad Cane</option>
-                <option value="Hemi Walker">Hemi Walker</option>
-                <option value="Slide Board">Slide Board</option>
-                <option value="wheelchair">wheelchair</option>
-                <option value="No AD">no AD</option>
-            </select>
-        </label>
+            <label for="ad-transfers">
+                <span>AD</span>
+                <select name="ad-transfers" id="ad-transfers">
+                    <option value="">-- Select --</option>
+                    <option value="FWW">FWW</option>
+                    <option value="4WW">4WW</option>
+                    <option value="SPC">SPC</option>
+                    <option value="Quad Cane">Quad Cane</option>
+                    <option value="Hemi Walker">Hemi Walker</option>
+                    <option value="Slide Board">Slide Board</option>
+                    <option value="wheelchair">wheelchair</option>
+                    <option value="No AD">no AD</option>
+                </select>
+            </label>
 
-        <label for="transfers-assistance">
-            <span>Assistance</span>
-            <select name="transfers-assistance" id="transfers-assistance">
-                <option value="">-- Select --</option>
-                <option value="M/I">M/I</option>
-                <option value="Supervision">Supervision</option>
-                <option value="SBA">SBA</option>
-                <option value="CGA">CGA</option>
-                <option value="Min Assist">Min</option>
-                <option value="Mod Assist">Mod</option>
-                <option value="Max Assist">Max</option>
-            </select>
-        </label>
+            <label for="transfers-assistance">
+                <span>Assistance</span>
+                <select name="transfers-assistance" id="transfers-assistance">
+                    <option value="">-- Select --</option>
+                    <option value="M/I">M/I</option>
+                    <option value="Supervision">Supervision</option>
+                    <option value="SBA">SBA</option>
+                    <option value="CGA">CGA</option>
+                    <option value="Min Assist">Min</option>
+                    <option value="Mod Assist">Mod</option>
+                    <option value="Max Assist">Max</option>
+                </select>
+            </label>
 
-        <p id="transfer-ad-error">Complete all values</p>
+            <p id="transfer-ad-error">Complete all values</p>
 
-        <div class="text-box" id="ther-act-box"></div>
+            <div class="text-box" id="ther-act-box"></div>
 
-        <div class="btn-container">
-            <button class='text' id="ther-act-create-btn">Create</button>
-            <button class='copy' id="ther-act-copy-btn">Copy</button>
+            <div class="btn-container">
+                <button class='text' id="ther-act-create-btn">Create</button>
+                <button class='copy' id="ther-act-copy-btn">Copy</button>
+            </div>
+
         </div>
 
     </fieldset>
 
     <!------------------------------------------ Gait Training Fieldset -------------------------------------->
 
-    <fieldset id="gait-fieldset">
-        <legend>Gait Training</legend>
+    <fieldset>
 
-        <label for="ad-gait">
-            <span>AD</span>
-            <select name="ad-gait" id="ad-gait">
-                <option value="">-- Select --</option>
-                <option value="FWW">FWW</option>
-                <option value="4WW">4WW</option>
-                <option value="SPC">SPC</option>
-                <option value="Quad Cane">Quad Cane</option>
-                <option value="Hemi Walker">Hemi Walker</option>
-                <option value="No AD">no AD</option>
-            </select>
-        </label>
+        <legend id="gait-legend">Gait Training</legend>
 
-        <label for="distance">
-            <span>Feet Distance</span>
-            <input type="number" id="distance" name="distance" value="0" />
-        </label>
+        <div class='hide' id="gait-fieldset">
 
-        <p id="gait-distance-error">Complete all values</p>
+            <label for="ad-gait">
+                <span>AD</span>
+                <select name="ad-gait" id="ad-gait">
+                    <option value="">-- Select --</option>
+                    <option value="FWW">FWW</option>
+                    <option value="4WW">4WW</option>
+                    <option value="SPC">SPC</option>
+                    <option value="Quad Cane">Quad Cane</option>
+                    <option value="Hemi Walker">Hemi Walker</option>
+                    <option value="No AD">no AD</option>
+                </select>
+            </label>
 
-        <label for="gait-assistance">
-            <span>Assistance</span>
-            <select name="gait-assistance" id="gait-assistance">
-                <option value="">-- Select --</option>
-                <option value="M/I">M/I</option>
-                <option value="Supervision">Supervision</option>
-                <option value="SBA">SBA</option>
-                <option value="CGA">CGA</option>
-                <option value="Min Assist">Min</option>
-                <option value="Mod Assist">Mod</option>
-                <option value="Max Assist">Max</option>
-            </select>
-        </label>
+            <label for="distance">
+                <span>Feet Distance</span>
+                <input type="number" id="distance" name="distance" value="0" />
+            </label>
 
-        <div class="text-box" id="gait-box"></div>
+            <p id="gait-distance-error">Complete all values</p>
 
-        <div class="btn-container">
-            <button class='text' id="gait-create-btn">Create</button>
-            <button class='copy' id="gait-copy-btn">Copy</button>
+            <label for="gait-assistance">
+                <span>Assistance</span>
+                <select name="gait-assistance" id="gait-assistance">
+                    <option value="">-- Select --</option>
+                    <option value="M/I">M/I</option>
+                    <option value="Supervision">Supervision</option>
+                    <option value="SBA">SBA</option>
+                    <option value="CGA">CGA</option>
+                    <option value="Min Assist">Min</option>
+                    <option value="Mod Assist">Mod</option>
+                    <option value="Max Assist">Max</option>
+                </select>
+            </label>
+
+            <div class="text-box" id="gait-box"></div>
+
+            <div class="btn-container">
+                <button class='text' id="gait-create-btn">Create</button>
+                <button class='copy' id="gait-copy-btn">Copy</button>
+            </div>
 
         </div>
 
@@ -154,46 +167,51 @@
     <!------------------------------------------ Stair Training Fieldset -------------------------------------->
 
 
-    <fieldset id="stair-fieldset">
-        <legend>Stair Training</legend>
+    <fieldset>
 
-        <label for="ad">
-            <span>Railings</span>
-            <select name="railings" id="railings">
-                <option value="">-- Select --</option>
-                <option value="no railings">None</option>
-                <option value="one railing">One</option>
-                <option value="two railings">Two</option>
-                <option value="single railing and cane">Railing/Cane</option>
-            </select>
-        </label>
+        <legend id="stairs-legend">Stair Training</legend>
 
-        <label for="stairs-assistance">
-            <span>Assistance</span>
-            <select name="stairs-assistance" id="stairs-assistance">
-                <option value="">-- Select --</option>
-                <option value="M/I">M/I</option>
-                <option value="Supervision">Supervision</option>
-                <option value="SBA">SBA</option>
-                <option value="CGA">CGA</option>
-                <option value="Min Assist">Min</option>
-                <option value="Mod Assist">Mod</option>
-                <option value="Max Assist">Max</option>
-            </select>
-        </label>
+        <div class='hide' id="stairs-fieldset">
+
+            <label for="railings">
+                <span>Railings</span>
+                <select name="railings" id="railings">
+                    <option value="">-- Select --</option>
+                    <option value="no railings">None</option>
+                    <option value="one railing">One</option>
+                    <option value="two railings">Two</option>
+                    <option value="single railing and cane">Railing/Cane</option>
+                </select>
+            </label>
+
+            <label for="stairs-assistance">
+                <span>Assistance</span>
+                <select name="stairs-assistance" id="stairs-assistance">
+                    <option value="">-- Select --</option>
+                    <option value="M/I">M/I</option>
+                    <option value="Supervision">Supervision</option>
+                    <option value="SBA">SBA</option>
+                    <option value="CGA">CGA</option>
+                    <option value="Min Assist">Min</option>
+                    <option value="Mod Assist">Mod</option>
+                    <option value="Max Assist">Max</option>
+                </select>
+            </label>
 
 
-        <label for="num-steps">
-            <span>Steps</span>
-            <input type="number" id="num-steps" name="num-steps" value="0" />
-        </label>
+            <label for="num-steps">
+                <span>Steps</span>
+                <input type="number" id="num-steps" name="num-steps" value="0" />
+            </label>
 
-        <p id="stairs-error">Complete all values</p>
-        <div class="text-box" id="stairs-box"></div>
+            <p id="stairs-error">Complete all values</p>
+            <div class="text-box" id="stairs-box"></div>
 
-        <div class="btn-container">
-            <button class='text' id="stair-create-btn">Create</button>
-            <button class='copy' id="stairs-copy-btn">Copy</button>
+            <div class="btn-container">
+                <button class='text' id="stair-create-btn">Create</button>
+                <button class='copy' id="stairs-copy-btn">Copy</button>
+            </div>
+
         </div>
 
     </fieldset>

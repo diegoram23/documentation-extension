@@ -3,6 +3,8 @@ import { supineExText, seatedExText, standingExText, retText, bedMobilityText, t
 /*----------------------------- Ther Ex variables and Functions ---------------------------------- */
 
 const therExCreatBtn = document.getElementById('ther-ex-create-btn')
+const toggleTherEx = document.getElementById('ther-ex-legend')
+const therExDisplay = document.getElementById('ther-ex-fieldset')
 const supineEx = document.getElementById('supine-ex')
 const seatedEx = document.getElementById('seated-ex')
 const standingEx = document.getElementById('standing-ex')
@@ -10,6 +12,15 @@ const weights = document.getElementById('weights-ex')
 const therExText = document.getElementById('ther-ex-box')
 const reps = document.getElementById('reps-ex')
 const therExCopyBtn = document.getElementById('ther-ex-copy-btn')
+
+//Toggles Display
+toggleTherEx.addEventListener('click', () => {
+    if (therExDisplay.style.display === 'none') {
+        therExDisplay.style.display = 'block'
+    } else {
+        therExDisplay.style.display = 'none'
+    }
+})
 
 //Depending what exercise options user chooses, a specific function will be called
 therExCreatBtn.addEventListener('click', () => {
@@ -126,6 +137,8 @@ therExCopyBtn.addEventListener('click', () => {
 /*----------------------------- Ther Act variables and Functions ---------------------------------- */
 
 const therActCreateBtn = document.getElementById('ther-act-create-btn')
+const toggleTherAct = document.getElementById('ther-act-legend')
+const therActDisplay = document.getElementById('ther-act-fieldset')
 const bedMobility = document.getElementById('bed-mobility')
 const transfers = document.getElementById('transfers')
 const therActText = document.getElementById('ther-act-box')
@@ -133,6 +146,16 @@ const adTransfers = document.getElementById('ad-transfers')
 const transfersAssistance = document.getElementById('transfers-assistance')
 const transferAdError = document.getElementById('transfer-ad-error')
 const therActCopyBtn = document.getElementById('ther-act-copy-btn')
+
+
+//Toggles Display
+toggleTherAct.addEventListener('click', () => {
+    if (therActDisplay.style.display === 'none') {
+        therActDisplay.style.display = 'block'
+    } else {
+        therActDisplay.style.display = 'none'
+    }
+})
 
 therActCreateBtn.addEventListener('click', () => {
 
@@ -189,12 +212,23 @@ therActCopyBtn.addEventListener('click', () => {
 /*----------------------------- Gait Training variables and Functions ---------------------------------- */
 
 const gaitCreateBtn = document.getElementById('gait-create-btn')
+const toggleGait = document.getElementById('gait-legend')
+const gaitDisplay = document.getElementById('gait-fieldset')
 const gaitAd = document.getElementById('ad-gait')
 const gaitTextBox = document.getElementById('gait-box')
 const distance = document.getElementById('distance')
 const gaitAssistance = document.getElementById('gait-assistance')
 const gaitDistanceError = document.getElementById('gait-distance-error')
 const gaitCopyBtn = document.getElementById('gait-copy-btn')
+
+//Toggles Display
+toggleGait.addEventListener('click', () => {
+    if (gaitDisplay.style.display === 'none') {
+        gaitDisplay.style.display = 'block'
+    } else {
+        gaitDisplay.style.display = 'none'
+    }
+})
 
 
 gaitCreateBtn.addEventListener('click', () => {
@@ -228,12 +262,24 @@ gaitCopyBtn.addEventListener('click', () => {
 /*----------------------------- Stair Training variables and Functions ---------------------------------- */
 
 const stairCreateBtn = document.getElementById('stair-create-btn')
+const toggleStairs = document.getElementById('stairs-legend')
+const stairsDisplay = document.getElementById('stairs-fieldset')
 const stairsTextBox = document.getElementById('stairs-box')
 const railings = document.getElementById('railings')
 const stairsAssistance = document.getElementById('stairs-assistance')
 const numSteps = document.getElementById('num-steps')
 const stairsError = document.getElementById('stairs-error')
 const stairsCopyBtn = document.getElementById('stairs-copy-btn')
+
+
+//Toggles Display
+toggleStairs.addEventListener('click', () => {
+    if (stairsDisplay.style.display === 'none') {
+        stairsDisplay.style.display = 'block'
+    } else {
+        stairsDisplay.style.display = 'none'
+    }
+})
 
 stairCreateBtn.addEventListener('click', () => {
     if (railings.value !== '' && stairsAssistance.value !== '' && numSteps.value >= 1) {
